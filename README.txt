@@ -1,1 +1,1 @@
-Alteração 1
+Alteração em A, conflito em A
