@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<title>SI1</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("#adiciona").click(function() {
+		var assunto = $("#assunto").val();
+		var radio = $('input[name=optradio]');
+		var checkedValue = radio.filter(':checked').val();
+		if(checkedValue == 1){
+			$("#tabela1").append(
+					"<tr>" +
+					"<td>"+ assunto + "</td>" +
+					"<td>   <a href='javascript:void(0);' class='btn btn-danger remove'><i class='icon-trash icon-white'></i> Remover</a>" + "	"+
+					"<a href='javascript:void(0);' value="+"'"+ assunto+"'"+" class='btn btn-warning mover'><i class='icon-move icon-white'></i> Mover</a>" +
+					"</td>"+
+					"</tr>");
+		}else if(checkedValue == 0){
+			$("#tabela2").append(
+					"<tr>" +
+					"<td>"+ assunto + "</td>" +
+					"<td>   <a href='javascript:void(0);' class='btn btn-danger remove'><i class='icon-trash icon-white'></i> Remover</a>" +
+					"</td>"+
+					"</tr>");
+		}else{
+			alert("Você precisa selecionar uma das opções!")
+		}
+
+		});
+
+	$(document).on('click', 'a.remove', function () {
+		$(this).closest('tr').remove();
+	});
+
+	$(document).on('click', 'a.mover', function () {
+		var assunto = $(this).attr('value');
+		$("#tabela2").append(
+				"<tr>" +
+				"<td>"+ assunto + "</td>" +
+				"<td>   <a href='javascript:void(0);' class='btn btn-danger remove'><i class='icon-trash icon-white'></i> Remover</a>" +
+				"</td>"+
+				"</tr>");
+		$(this).closest('tr').remove();
+	});
+});
+</script>
+</head>
+<body>
+	<div class="container">
+		<!-- Navbar -->
+		<ul class="nav nav-tabs">
+			<li>
+			<a href="index.html">Home</a>
+			</li>
+			<li><a href="cadastro.html">Cadastrar</a></li>
+			<li  class="active"><a href="obrigado.html">Temas</a></li>
+		</ul>
+		
+		<div class="jumbotron">
+			<h1>Sistemas de Informação 1</h1>
+			<p>Obrigado por se cadastrar!</p> 
+		</div>
+		
+		<div class="row">
+		
+		<div class="form-group">
+			<input class="form-control" id="assunto" type="text" style="width: 20%;">				
+		</div>
+	
+		<form role="form">
+			<div class="radio">
+				<label><input value="1" name="optradio" type="radio">Gostaria de aprender</label>
+			</div>
+			<div class="radio">
+				<label><input value="0" name="optradio" type="radio">Já aprendi</label>
+			</div>
+		</form>
+		
+		<div class="form-group">
+			<div class="col-sm-offset-0 col-sm-10">
+				<p>
+					<button type="submit" class="btn btn-default" id="adiciona">Adicionar</button>
+				</p>				
+			</div>
+		</div>
+			
+		<br>
+
+		<table class="table" id="tabela1">
+				<thead>
+				<tr>
+					<th>Gostaria de aprender:</th>
+					
+				</tr>
+				</thead>
+
+				<tbody>
+				<tr></tr>
+				</tr>
+				</tbody>
+				
+			</table>
+
+			<br>
+
+			<table class="table" id="tabela2">
+				<thead>
+				<tr>
+					<th>Já aprendi:</th>
+				</tr>
+				</thead>
+
+				<tbody>
+
+				<tr></tr>
+				</tbody>
+			
+			</table>
+
+					
+		</div>
+		
+		<div id="Voltar">
+			<a href="index.html"><button class="btn btn-success btn-mini" style="width: 20%;">Voltar</button></a>
+		</div>
+		
+		<hr>
+		<!-- Rodape -->
+		<p>Criado por Carla Morgana - 2015.1 / UFCG</p>
+	</body>
+</html>
+		
