@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8" />
+    <head>
+        <title>Cadastro</title>	
+	<link rel="stylesheet" href="estilo.css">
+    </head>
+    <body>
+	<form>
+	    	<p><label> Nome:
+  	    	<input type="text"/></label></p>
+	    	<p><label>E-mail:
+  	    	<input type="email" name="email">
+	    	</lable></p>
+	    	<p><label>Data de nascimento:
+  	    	<input type="date">
+	    	</label></p>
+	    	<p><label> Curso:
+  	    	<input type="text"/></label></p>
+	    	<p><label>Matrícula:
+  	    	<input type="number" min='000000000' max='999999999'>
+	    	</label></p>
+	</form>
+	<p>
+	<a href="obrigado.html">		
+	<input type="submit" value="Cadastra-se">
+	</a>
+	</p>
+
+	
+    </body>
+</html>
